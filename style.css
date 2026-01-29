@@ -1,0 +1,333 @@
+/* استيراد خط القاهرة من جوجل */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
+
+:root {
+    --primary-color: #920505; /* برتقالي النعام */
+    --bg-dark: #0f0f0f;
+    --card-bg: #1a1a1a;
+    --text-light: #ffffff;
+    --text-gray: #9ca3af;
+    --transition: 0.3s ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    direction: rtl;
+}
+
+/* الهيدر والبانر الرئيسي */
+header {
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+header span {
+    color: var(--primary-color);
+}
+
+/* القائمة العلوية المثبتة */
+nav {
+    position: sticky;
+    top: 0;
+    background: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    border-bottom: 1px solid #333;
+    z-index: 1000;
+    overflow-x: auto;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-light);
+    padding: 8px 20px;
+    border-radius: 25px;
+    border: 1px solid #444;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    transition: var(--transition);
+}
+
+nav a:hover, nav a.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* تنسيق أقسام المنيو */
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    border-right: 5px solid var(--primary-color);
+    padding-right: 15px;
+}
+
+/* كروت الطعام */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid #333;
+    padding: 20px;
+    border-radius: 15px;
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.price-box {
+    text-align: left;
+}
+
+.price {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.double {
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    display: block;
+}
+
+.description {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+/* أزرار التواصل الاجتماعي */
+.social-section {
+    text-align: center;
+    padding: 50px 20px;
+    border-top: 1px solid #333;
+}
+
+.social-btns {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition);
+}
+
+.fb { background: #1877F2; }
+.ig { background: linear-gradient(45deg, #7e0b0b, #490101, #680606, #cc2366, #bc1888); }
+.tk { background: #000; border: 1px solid #fff; }
+
+.btn:hover { opacity: 0.8; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    nav {
+        padding: 10px;
+    }
+
+    nav a {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .menu-card {
+        padding: 1rem;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .price {
+        font-size: 1.1rem;
+    }
+
+    .description {
+        font-size: 0.85rem;
+    }
+
+    .social-section {
+        padding: 40px 20px;
+    }
+
+    .social-btns {
+        gap: 10px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    /* Floating cart adjustments */
+    #floating-cart {
+        max-width: calc(100vw - 2rem);
+        right: 1rem;
+        bottom: 5rem;
+    }
+
+    #floating-cart-btn {
+        bottom: 1rem;
+        right: 1rem;
+    }
+
+    /* Modal adjustments */
+    .modal-content {
+        margin: 1rem;
+        max-width: calc(100vw - 2rem);
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+    nav a {
+        padding: 4px 8px;
+        font-size: 0.75rem;
+    }
+
+    .menu-card {
+        padding: 0.75rem;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .price {
+        font-size: 1rem;
+    }
+
+    .description {
+        font-size: 0.8rem;
+    }
+
+    .social-btns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    /* Sidebar adjustments */
+    #sidebar {
+        width: 100%;
+        right: 0;
+    }
+
+    /* Cart adjustments */
+    #floating-cart {
+        right: 0.5rem;
+        bottom: 4rem;
+        max-width: calc(100vw - 1rem);
+    }
+
+    #floating-cart-btn {
+        bottom: 0.5rem;
+        right: 0.5rem;
+    }
+}
+#sidebar-toggle{
+    position: fixed;
+    z-index: 8888;
+}
+
+/* Menu section visibility */
+.menu-section {
+    display: block;
+}
+
+.menu-section:not(.active) {
+    display: none;
+}
+
+/* Sidebar styling */
+#sidebar {
+    background-color: #333333a6; /* Red background */
+}
+
+/* Floating cart border */
+#floating-cart {
+    border: 2px solid #dc2626; /* Red border */
+}
