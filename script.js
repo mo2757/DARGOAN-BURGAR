@@ -37,6 +37,15 @@ document.querySelectorAll('.double-btn').forEach(button => {
     });
 });
 
+// أزرار الإضافات - تتعامل مع إضافة الإضافات
+document.querySelectorAll('.add-extra-btn').forEach(button => {
+    button.addEventListener('click', (e) => {
+        const name = e.target.dataset.name; // الحصول على اسم الإضافة من خاصية البيانات
+        const price = parseFloat(e.target.dataset.price); // الحصول على السعر وتحويله إلى رقم
+        addToCart(name, price); // إضافة الإضافة إلى السلة
+    });
+});
+
 // Add item to cart
 function addToCart(name, price) {
     const existingItem = cart.find(item => item.name === name);
@@ -48,6 +57,7 @@ function addToCart(name, price) {
     saveCart();
     updateCartDisplay();
     updateCartCount();
+    updateExtraButtons();
 }
 
 // Remove item from cart
@@ -184,18 +194,31 @@ checkoutBtn.addEventListener('click', () => {
         return;
     }
 
-    // Get selected area and fee
-    const areaSelect = document.getElementById('area-select');
-    const selectedOption = areaSelect.options[areaSelect.selectedIndex];
-    const area = selectedOption.value;
-    const deliveryFee = parseFloat(selectedOption.getAttribute('data-fee')) || 0;
+    let area = '';
+    let deliveryFee = 0;
+    let areaText = '';
+
+    if (orderType === 'delivery') {
+        // Get selected area and fee for delivery
+        const areaSelect = document.getElementById('area-select');
+        const selectedOption = areaSelect.options[areaSelect.selectedIndex];
+        area = selectedOption.value;
+        deliveryFee = parseFloat(selectedOption.getAttribute('data-fee')) || 0;
+        areaText = selectedOption.text;
+    } else {
+        // Takeaway - no delivery fee
+        area = 'تيك أوي';
+        areaText = 'تيك أوي';
+        deliveryFee = 0;
+    }
+
     let total = cartTotal + deliveryFee;
 
     // Format order message
     let message = `طلب جديد من ${userData.name}\n`;
     message += `الهاتف: ${userData.phone}\n`;
     message += `العنوان: ${userData.address}\n`;
-    message += `المنطقة: ${selectedOption.text}\n\n`;
+    message += `نوع الطلب: ${areaText}\n\n`;
     message += `الطلبات:\n`;
 
     cart.forEach(item => {
@@ -216,7 +239,7 @@ checkoutBtn.addEventListener('click', () => {
         id: Date.now(),
         user: userData,
         items: [...cart],
-        area: selectedOption.text,
+        area: areaText,
         deliveryFee: deliveryFee,
         total: total,
         date: new Date().toLocaleString('ar-EG')
@@ -235,6 +258,30 @@ checkoutBtn.addEventListener('click', () => {
 // Initialize cart display on page load
 updateCartDisplay();
 updateCartCount();
+
+// Order type selection
+const takeawayBtn = document.getElementById('takeaway-btn');
+const deliveryBtn = document.getElementById('delivery-btn');
+const areaSelection = document.getElementById('area-selection');
+let orderType = 'takeaway'; // Default to takeaway
+
+takeawayBtn.addEventListener('click', () => {
+    orderType = 'takeaway';
+    takeawayBtn.classList.add('bg-red-600');
+    takeawayBtn.classList.remove('bg-gray-600');
+    deliveryBtn.classList.add('bg-gray-600');
+    deliveryBtn.classList.remove('bg-blue-600');
+    areaSelection.classList.add('hidden');
+});
+
+deliveryBtn.addEventListener('click', () => {
+    orderType = 'delivery';
+    deliveryBtn.classList.add('bg-blue-600');
+    deliveryBtn.classList.remove('bg-gray-600');
+    takeawayBtn.classList.add('bg-gray-600');
+    takeawayBtn.classList.remove('bg-red-600');
+    areaSelection.classList.remove('hidden');
+});
 
 // Modal elements
 const loginModal = document.getElementById('login-modal');
@@ -369,6 +416,22 @@ document.getElementById('close-complaint-modal').addEventListener('click', () =>
     complaintModal.classList.add('hidden');
 });
 
+// Update extra buttons based on cart contents
+function updateExtraButtons() {
+    const hasSandwich = cart.some(item => !['صوص على البطاطس', 'سويت كورن'].includes(item.name));
+    document.querySelectorAll('.add-extra-btn').forEach(button => {
+        button.disabled = !hasSandwich;
+        if (hasSandwich) {
+            button.classList.remove('opacity-50', 'cursor-not-allowed');
+        } else {
+            button.classList.add('opacity-50', 'cursor-not-allowed');
+        }
+    });
+}
+
+// Initialize extra buttons on page load
+updateExtraButtons();
+
 // Category selection functionality
 document.querySelectorAll('.category-link').forEach(link => {
     link.addEventListener('click', (e) => {
@@ -388,11 +451,9 @@ document.querySelectorAll('.category-link').forEach(link => {
 
         // Update navigation active state
         document.querySelectorAll('.category-link').forEach(navLink => {
-            navLink.classList.remove('bg-orange-600', 'font-bold');
-            navLink.classList.add('border', 'border-gray-600');
+            navLink.classList.remove('active');
         });
-        e.target.classList.add('bg-orange-600', 'font-bold');
-        e.target.classList.remove('border', 'border-gray-600');
+        e.target.classList.add('active');
 
         // Smooth scroll to section
         targetSection.scrollIntoView({ behavior: 'smooth' });
