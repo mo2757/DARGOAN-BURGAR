@@ -331,3 +331,143 @@ h2 {
 #floating-cart {
     border: 2px solid #dc2626; /* Red border */
 }
+
+/* Styles from HTML */
+body { font-family: 'Cairo', sans-serif; background-color: #0f0f0f; color: #fff; }
+.gradient-text { background: linear-gradient(90deg, #f97316, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.menu-card { background: #1a1a1a; border: 1px solid #333; transition: 0.3s; }
+.menu-card:hover { border-color: #bd0505; transform: translateY(-5px); }
+.price-tag { color: #a30101; font-weight: bold; font-size: 1.2rem; }
+.double-price { font-size: 0.9rem; color: #9ca3af; }
+
+/* Button Styles */
+.category-link {
+  padding: 0.5rem 1rem;
+  border: 1px solid #4b5563;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.category-link.active {
+  background-color: #bd0505;
+  color: white;
+  border-color: #bd0505;
+}
+
+.add-to-cart-btn {
+  background-color: #dc2626;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.double-btn {
+  background-color: #dc2626;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.add-extra-btn {
+  background-color: #dc2626;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.add-extra-btn.green {
+  background-color: #dc2626;
+}
+
+.add-extra-btn.yellow {
+  background-color:#dc2626;
+}
+
+#sidebar-toggle {
+  background-color: #b30b0b;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+#floating-cart-btn {
+  background-color: #c20707;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 9999px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.takeaway-btn {
+  flex: 1;
+  background-color: #dc2626;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+.delivery-btn {
+  flex: 1;
+  background-color: #2563eb;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+#checkout-btn {
+  background-color: #d12020;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.sidebar-btn {
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 1rem;
+  background-color: #374151;
+  border-radius: 0.25rem;
+}
+
+.sidebar-btn:hover {
+  background-color: #4b5563;
+}
+
+.modal-btn-primary {
+  width: 100%;
+  background-color: #d82323;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-btn-secondary {
+  width: 100%;
+  background-color: #4b5563;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+.bg-red-600 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(223 47 47);
+}
+/* تأثير عند الوقوف بالماوس على الصورة */
+.product-img:hover {
+    transform: scale(1.1); /* زووم بسيط */
+    filter: brightness(1.1); /* إضاءة خفيفة */
+}
+
+/* لو حابب تخلي الخلفية ورا الصورة المجمية متناسقة */
+.product-img {
+    background-color: #fcfcfc; /* خلفية رمادي فاتح جداً لملء الفراغات */
+    padding: 5px; /* مسافة بسيطة عشان الصورة متلمسش الحواف */
+}
