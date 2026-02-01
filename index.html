@@ -6,15 +6,7 @@
     <title>DRAGON BURGAR بنها</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
-        body { font-family: 'Cairo', sans-serif; background-color: #0f0f0f; color: #fff; }
-        .gradient-text { background: linear-gradient(90deg, #f97316, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .menu-card { background: #1a1a1a; border: 1px solid #333; transition: 0.3s; }
-        .menu-card:hover { border-color: #f97316; transform: translateY(-5px); }
-        .price-tag { color: #f97316; font-weight: bold; font-size: 1.2rem; }
-        .double-price { font-size: 0.9rem; color: #9ca3af; }
-    </style>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -29,11 +21,12 @@
 
     <div class="sticky top-0 z-50 bg-[#0f0f0f]/90 backdrop-blur-md border-b border-gray-800 py-4 overflow-x-auto">
         <div class="flex justify-center gap-4 px-4 min-w-max">
-            <button class="px-4 py-2 border border-gray-600 rounded-full text-sm category-link" data-category="beef">لحم بقري</button>
-            <button class="px-4 py-2 border border-gray-600 rounded-full text-sm category-link" data-category="chicken">دجاج</button>
-            <button class="px-4 py-2 border border-gray-600 rounded-full text-sm category-link" data-category="special">مميزة</button>
-            <button class="px-4 py-2 border border-gray-600 rounded-full text-sm category-link" data-category="sides">المقبلات والمشروبات</button>
-            <button class="px-4 py-2 border border-gray-600 rounded-full text-sm category-link" data-category="additions">الإضافات</button>
+            <button class="category-link" data-category="beef">لحم بقري</button>
+            <button class="category-link" data-category="chicken">دجاج</button>
+            <button class="category-link" data-category="special">مميزة</button>
+            <button class="category-link" data-category="children">وجبات الأطفال</button>
+            <button class="category-link" data-category="sides">المقبلات والمشروبات</button>
+            <button class="category-link" data-category="additions">الإضافات</button>
         </div>
     </div>
 
@@ -45,76 +38,106 @@
             <h2 class="text-3xl font-bold mb-8 border-r-4 border-blue-500 pr-4 italic">ساندوتشات اللحوم (Beef)</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="menu-card p-5 rounded-2xl">
+                    <img src="اورجينال بيف .jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="text-xl font-bold"> أوريجنال</h3>
                         <div class="text-left">
-                            <p class="price-tag text-blue-400">100 <small>ج.م</small></p>
+                            <p class="price-tag text-red-400">100 <small>ج.م</small></p>
                             <p class="double-price">دابل: 140 ج.م</p>
                         </div>
                     </div>
                     <p class="text-gray-400 text-sm">قطعة برجر محشي جبنة + صوص بيج تيستي + خس + خيار مخلل + بصل + بطاطس متبلة</p>
-                    <button class="add-to-cart-btn bg-blue-600 text-white px-4 py-2 rounded mt-2" data-name="أوريجنال بيف (سنجل)" data-price="100">أضف إلى السلة</button>
-                    <button class="double-btn bg-blue-600 text-white px-4 py-2 rounded mt-2" data-name="أوريجنال بيف (دابل)" data-price="140">أضف دابل</button>
+                    <button class="add-to-cart-btn" data-name="أوريجنال بيف (سنجل)" data-price="100">أضف إلى السلة</button>
+                    <button class="double-btn" data-name="أوريجنال بيف (دابل)" data-price="140">أضف دابل</button>
+                    <div class="flex gap-2 mt-2">
+                        <button class="add-extra-btn" data-name="صوص على البطاطس" data-price="5">صوص على البطاطس (5 ج.م)</button>
+                        <button class="add-extra-btn" data-name="سويت كورن" data-price="5">سويت كورن (5 ج.م)</button>
+                    </div>
                 </div>
                 <div class="menu-card p-5 rounded-2xl">
+                    <img src="ميكس فاير بيف.jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="text-xl font-bold">ميكس فاير</h3>
                         <div class="text-left">
-                            <p class="price-tag text-blue-400">110 <small>ج.م</small></p>
+                            <p class="price-tag text-red-400">110 <small>ج.م</small></p>
                             <p class="double-price">دابل: 150 ج.م</p>
                         </div>
                     </div>
                     <p class="text-gray-400 text-sm">قطعة برجر محشي جبنة + موتزارلا ستيكس + فلفل هالبينو + صوص بيج تيستي + خس + خيار مخلل + بصل + بطاطس متبلة</p>
-                    <button class="add-to-cart-btn bg-blue-600 text-white px-4 py-2 rounded mt-2" data-name="ميكس فاير بيف (سنجل)" data-price="110">أضف إلى السلة</button>
-                    <button class="double-btn bg-blue-600 text-white px-4 py-2 rounded mt-2" data-name="ميكس فاير بيف (دابل)" data-price="150">أضف دابل</button>
+                    <button class="add-to-cart-btn" data-name="ميكس فاير بيف (سنجل)" data-price="110">أضف إلى السلة</button>
+                    <button class="double-btn" data-name="ميكس فاير بيف (دابل)" data-price="150">أضف دابل</button>
+                    <div class="flex gap-2 mt-2">
+                        <button class="add-extra-btn" data-name="صوص على البطاطس" data-price="5">صوص على البطاطس (5 ج.م)</button>
+                        <button class="add-extra-btn" data-name="سويت كورن" data-price="5">سويت كورن (5 ج.م)</button>
+                    </div>
                 </div>
                 <div class="menu-card p-5 rounded-2xl">
+                    <img src="الوحش بيف.jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="text-xl font-bold">الوحش</h3>
                         <div class="text-left">
-                            <p class="price-tag text-blue-400">105 <small>ج.م</small></p>
+                            <p class="price-tag text-red-400">105 <small>ج.م</small></p>
                             <p class="double-price">دابل: 145 ج.م</p>
                         </div>
                     </div>
                     <p class="text-gray-400 text-sm">قطعة برجر محشي جبنة + روز بيف + صوص بيج تيستي + خس + خيار مخلل + بصل + بطاطس متبلة</p>
-                    <button class="add-to-cart-btn bg-blue-600 text-white px-4 py-2 rounded mt-2" data-name="الوحش بيف (سنجل)" data-price="105">أضف إلى السلة</button>
-                    <button class="double-btn bg-blue-600 text-white px-4 py-2 rounded mt-2" data-name="الوحش بيف (دابل)" data-price="145">أضف دابل</button>
+                    <button class="add-to-cart-btn" data-name="الوحش بيف (سنجل)" data-price="105">أضف إلى السلة</button>
+                    <button class="double-btn" data-name="الوحش بيف (دابل)" data-price="145">أضف دابل</button>
+                    <div class="flex gap-2 mt-2">
+                        <button class="add-extra-btn green" data-name="صوص على البطاطس" data-price="5">صوص على البطاطس (5 ج.م)</button>
+                        <button class="add-extra-btn yellow" data-name="سويت كورن" data-price="5">سويت كورن (5 ج.م)</button>
+                    </div>
                 </div>
                 <div class="menu-card p-5 rounded-2xl">
+                    <img src="فولكينو بيف.jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="text-xl font-bold">فولكينو تشيز</h3>
                         <div class="text-left">
-                            <p class="price-tag text-blue-400">110 <small>ج.م</small></p>
+                            <p class="price-tag text-red-400">110 <small>ج.م</small></p>
                             <p class="double-price">دابل: 150 ج.م</p>
                         </div>
                     </div>
                     <p class="text-gray-400 text-sm">قطعة برجر محشي جبنة + موتزارلا ستيكس + صوص بيج تيستي + خس + خيار مخلل + بصل + بطاطس متبلة</p>
-                    <button class="add-to-cart-btn bg-blue-600 text-white px-4 py-2 rounded mt-2" data-name="فولكينو تشيز بيف (سنجل)" data-price="110">أضف إلى السلة</button>
-                    <button class="double-btn bg-blue-600 text-white px-4 py-2 rounded mt-2" data-name="فولكينو تشيز بيف (دابل)" data-price="150">أضف دابل</button>
+                    <button class="add-to-cart-btn" data-name="فولكينو تشيز بيف (سنجل)" data-price="110">أضف إلى السلة</button>
+                    <button class="double-btn" data-name="فولكينو تشيز بيف (دابل)" data-price="150">أضف دابل</button>
+                    <div class="flex gap-2 mt-2">
+                        <button class="add-extra-btn" data-name="صوص على البطاطس" data-price="5">صوص على البطاطس (5 ج.م)</button>
+                        <button class="add-extra-btn" data-name="سويت كورن" data-price="5">سويت كورن (5 ج.م)</button>
+                    </div>
                 </div>
                 <div class="menu-card p-5 rounded-2xl">
+                    <img src="مشروم رانش بيف.jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="text-xl font-bold">مشروم رانش</h3>
                         <div class="text-left">
-                            <p class="price-tag text-blue-400">110 <small>ج.م</small></p>
+                            <p class="price-tag text-red-400">110 <small>ج.م</small></p>
                             <p class="double-price">دابل: 150 ج.م</p>
                         </div>
                     </div>
                     <p class="text-gray-400 text-sm">قطعة برجر محشي جبنة + مشروم + صوص بيج تيستي + صوص رانش + خس + خيار مخلل + بصل + بطاطس متبلة</p>
-                    <button class="add-to-cart-btn bg-blue-600 text-white px-4 py-2 rounded mt-2" data-name="مشروم رانش بيف (سنجل)" data-price="110">أضف إلى السلة</button>
-                    <button class="double-btn bg-blue-600 text-white px-4 py-2 rounded mt-2" data-name="مشروم رانش بيف (دابل)" data-price="150">أضف دابل</button>
+                    <button class="add-to-cart-btn" data-name="مشروم رانش بيف (سنجل)" data-price="110">أضف إلى السلة</button>
+                    <button class="double-btn" data-name="مشروم رانش بيف (دابل)" data-price="150">أضف دابل</button>
+                    <div class="flex gap-2 mt-2">
+                        <button class="add-extra-btn green" data-name="صوص على البطاطس" data-price="5">صوص على البطاطس (5 ج.م)</button>
+                        <button class="add-extra-btn yellow" data-name="سويت كورن" data-price="5">سويت كورن (5 ج.م)</button>
+                    </div>
                 </div>
                 <div class="menu-card p-5 rounded-2xl">
+                    <img src="جولدن بيف.jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="text-xl font-bold">جولدن دراجون</h3>
                         <div class="text-left">
-                            <p class="price-tag text-blue-400">115 <small>ج.م</small></p>
+                            <p class="price-tag text-red-400">115 <small>ج.م</small></p>
                             <p class="double-price">دابل: 155 ج.م</p>
                         </div>
                     </div>
                     <p class="text-gray-400 text-sm">قطعة برجر محشي جبنة + بيف بيكون + موتزارلا ستيكس + حلقات بصل + صوص بيج تيستي + خس + خيار مخلل + بصل + بطاطس متبلة</p>
-                    <button class="add-to-cart-btn bg-blue-600 text-white px-4 py-2 rounded mt-2" data-name="جولدن دراجون بيف (سنجل)" data-price="115">أضف إلى السلة</button>
-                    <button class="double-btn bg-blue-600 text-white px-4 py-2 rounded mt-2" data-name="جولدن دراجون بيف (دابل)" data-price="155">أضف دابل</button>
+                    <button class="add-to-cart-btn" data-name="جولدن دراجون بيف (سنجل)" data-price="115">أضف إلى السلة</button>
+                    <button class="double-btn" data-name="جولدن دراجون بيف (دابل)" data-price="155">أضف دابل</button>
+                    <div class="flex gap-2 mt-2">
+                        <button class="add-extra-btn green" data-name="صوص على البطاطس" data-price="5">صوص على البطاطس (5 ج.م)</button>
+                        <button class="add-extra-btn yellow" data-name="سويت كورن" data-price="5">سويت كورن (5 ج.م)</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -123,76 +146,106 @@
             <h2 class="text-3xl font-bold mb-8 border-r-4 border-green-500 pr-4 italic">ساندوتشات الدجاج (Chicken)</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="menu-card p-5 rounded-2xl">
+                    <img src="اورجينال اتشيكن .jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="text-xl font-bold"> أوريجنال</h3>
                         <div class="text-left">
-                            <p class="price-tag text-green-400">100 <small>ج.م</small></p>
+                            <p class="price-tag text-red-400">100 <small>ج.م</small></p>
                             <p class="double-price">دابل: 140 ج.م</p>
                         </div>
                     </div>
                     <p class="text-gray-400 text-sm">قطعة فرايد تشيكن + صوص بيج تيستي + خس + خيار مخلل + بصل + بطاطس متبلة</p>
-                    <button class="add-to-cart-btn bg-green-600 text-white px-4 py-2 rounded mt-2" data-name="أوريجنال تشيكن (سنجل)" data-price="100">أضف إلى السلة</button>
-                    <button class="double-btn bg-green-600 text-white px-4 py-2 rounded mt-2" data-name="أوريجنال تشيكن (دابل)" data-price="140">أضف دابل</button>
+                    <button class="add-to-cart-btn" data-name="أوريجنال تشيكن (سنجل)" data-price="100">أضف إلى السلة</button>
+                    <button class="double-btn" data-name="أوريجنال تشيكن (دابل)" data-price="140">أضف دابل</button>
+                    <div class="flex gap-2 mt-2">
+                        <button class="add-extra-btn green" data-name="صوص على البطاطس" data-price="5">صوص على البطاطس (5 ج.م)</button>
+                        <button class="add-extra-btn yellow" data-name="سويت كورن" data-price="5">سويت كورن (5 ج.م)</button>
+                    </div>
                 </div>
                 <div class="menu-card p-5 rounded-2xl">
+                    <img src="ميكس فاير اتشيكن.jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="text-xl font-bold">ميكس فاير</h3>
                         <div class="text-left">
-                            <p class="price-tag text-green-400">110 <small>ج.م</small></p>
+                            <p class="price-tag text-red-400">110 <small>ج.م</small></p>
                             <p class="double-price">دابل: 150 ج.م</p>
                         </div>
                     </div>
                     <p class="text-gray-400 text-sm">قطعة فرايد تشيكن + موتزارلا ستيكس + فلفل هالبينو + صوص بيج تيستي + خس + خيار مخلل + بصل + بطاطس متبلة</p>
-                    <button class="add-to-cart-btn bg-green-600 text-white px-4 py-2 rounded mt-2" data-name="ميكس فاير تشيكن (سنجل)" data-price="110">أضف إلى السلة</button>
-                    <button class="double-btn bg-green-600 text-white px-4 py-2 rounded mt-2" data-name="ميكس فاير تشيكن (دابل)" data-price="150">أضف دابل</button>
+                    <button class="add-to-cart-btn" data-name="ميكس فاير تشيكن (سنجل)" data-price="110">أضف إلى السلة</button>
+                    <button class="double-btn" data-name="ميكس فاير تشيكن (دابل)" data-price="150">أضف دابل</button>
+                    <div class="flex gap-2 mt-2">
+                        <button class="add-extra-btn" data-name="صوص على البطاطس" data-price="5">صوص على البطاطس (5 ج.م)</button>
+                        <button class="add-extra-btn" data-name="سويت كورن" data-price="5">سويت كورن (5 ج.م)</button>
+                    </div>
                 </div>
                 <div class="menu-card p-5 rounded-2xl">
+                    <img src="الوحش اتشيكن.jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="text-xl font-bold">الوحش</h3>
                         <div class="text-left">
-                            <p class="price-tag text-green-400">105 <small>ج.م</small></p>
+                            <p class="price-tag text-red-400">105 <small>ج.م</small></p>
                             <p class="double-price">دابل: 145 ج.م</p>
                         </div>
                     </div>
                     <p class="text-gray-400 text-sm">قطعة فرايد تشيكن + تركي مدخن + صوص بيج تيستي + خس + خيار مخلل + بصل + بطاطس متبلة</p>
-                    <button class="add-to-cart-btn bg-green-600 text-white px-4 py-2 rounded mt-2" data-name="الوحش تشيكن (سنجل)" data-price="105">أضف إلى السلة</button>
-                    <button class="double-btn bg-green-600 text-white px-4 py-2 rounded mt-2" data-name="الوحش تشيكن (دابل)" data-price="145">أضف دابل</button>
+                    <button class="add-to-cart-btn" data-name="الوحش تشيكن (سنجل)" data-price="105">أضف إلى السلة</button>
+                    <button class="double-btn" data-name="الوحش تشيكن (دابل)" data-price="145">أضف دابل</button>
+                    <div class="flex gap-2 mt-2">
+                        <button class="add-extra-btn" data-name="صوص على البطاطس" data-price="5">صوص على البطاطس (5 ج.م)</button>
+                        <button class="add-extra-btn" data-name="سويت كورن" data-price="5">سويت كورن (5 ج.م)</button>
+                    </div>
                 </div>
                 <div class="menu-card p-5 rounded-2xl">
+                    <img src="فولكينو اتشكن.jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="text-xl font-bold">فولكينو تشيز</h3>
                         <div class="text-left">
-                            <p class="price-tag text-green-400">110 <small>ج.م</small></p>
+                            <p class="price-tag text-red-400">110 <small>ج.م</small></p>
                             <p class="double-price">دابل: 150 ج.م</p>
                         </div>
                     </div>
                     <p class="text-gray-400 text-sm">قطعة فرايد تشيكن + موتزارلا ستيكس + صوص بيج تيستي + خس + خيار مخلل + بصل + بطاطس متبلة</p>
-                    <button class="add-to-cart-btn bg-green-600 text-white px-4 py-2 rounded mt-2" data-name="فولكينو تشيز تشيكن (سنجل)" data-price="110">أضف إلى السلة</button>
-                    <button class="double-btn bg-green-600 text-white px-4 py-2 rounded mt-2" data-name="فولكينو تشيز تشيكن (دابل)" data-price="150">أضف دابل</button>
+                    <button class="add-to-cart-btn" data-name="فولكينو تشيز تشيكن (سنجل)" data-price="110">أضف إلى السلة</button>
+                    <button class="double-btn" data-name="فولكينو تشيز تشيكن (دابل)" data-price="150">أضف دابل</button>
+                    <div class="flex gap-2 mt-2">
+                        <button class="add-extra-btn" data-name="صوص على البطاطس" data-price="5">صوص على البطاطس (5 ج.م)</button>
+                        <button class="add-extra-btn" data-name="سويت كورن" data-price="5">سويت كورن (5 ج.م)</button>
+                    </div>
                 </div>
                 <div class="menu-card p-5 rounded-2xl">
+                    <img src="مشروم رانش اتشيكن.jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="text-xl font-bold">مشروم رانش</h3>
                         <div class="text-left">
-                            <p class="price-tag text-green-400">110 <small>ج.م</small></p>
+                            <p class="price-tag text-red-400">110 <small>ج.م</small></p>
                             <p class="double-price">دابل: 150 ج.م</p>
                         </div>
                     </div>
                     <p class="text-gray-400 text-sm">قطعة فرايد تشيكن + مشروم + صوص بيج تيستي + صوص رانش + خس + خيار مخلل + بصل + بطاطس متبلة</p>
-                    <button class="add-to-cart-btn bg-green-600 text-white px-4 py-2 rounded mt-2" data-name="مشروم رانش تشيكن (سنجل)" data-price="110">أضف إلى السلة</button>
-                    <button class="double-btn bg-green-600 text-white px-4 py-2 rounded mt-2" data-name="مشروم رانش تشيكن (دابل)" data-price="150">أضف دابل</button>
+                    <button class="add-to-cart-btn bg-red-600 text-white px-4 py-2 rounded mt-2" data-name="مشروم رانش تشيكن (سنجل)" data-price="110">أضف إلى السلة</button>
+                    <button class="double-btn bg-red-600 text-white px-4 py-2 rounded mt-2" data-name="مشروم رانش تشيكن (دابل)" data-price="150">أضف دابل</button>
+                    <div class="flex gap-2 mt-2">
+                        <button class="add-extra-btn" data-name="صوص على البطاطس" data-price="5">صوص على البطاطس (5 ج.م)</button>
+                        <button class="add-extra-btn" data-name="سويت كورن" data-price="5">سويت كورن (5 ج.م)</button>
+                    </div>
                 </div>
                 <div class="menu-card p-5 rounded-2xl">
+                    <img src="جولدن اتشيكن .jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="text-xl font-bold">جولدن دراجون</h3>
                         <div class="text-left">
-                            <p class="price-tag text-green-400">115 <small>ج.م</small></p>
+                            <p class="price-tag text-red-400">115 <small>ج.م</small></p>
                             <p class="double-price">دابل: 155 ج.م</p>
                         </div>
                     </div>
                     <p class="text-gray-400 text-sm">قطعة فرايد تشيكن + تركي مدخن + موتزارلا ستيكس + صوص بيج تيستي + خس + خيار مخلل + بصل + بطاطس متبلة</p>
-                    <button class="add-to-cart-btn bg-green-600 text-white px-4 py-2 rounded mt-2" data-name="جولدن دراجون تشيكن (سنجل)" data-price="115">أضف إلى السلة</button>
-                    <button class="double-btn bg-green-600 text-white px-4 py-2 rounded mt-2" data-name="جولدن دراجون تشيكن (دابل)" data-price="155">أضف دابل</button>
+                    <button class="add-to-cart-btn" data-name="جولدن دراجون تشيكن (سنجل)" data-price="115">أضف إلى السلة</button>
+                    <button class="double-btn" data-name="جولدن دراجون تشيكن (دابل)" data-price="155">أضف دابل</button>
+                    <div class="flex gap-2 mt-2">
+                        <button class="add-extra-btn" data-name="صوص على البطاطس" data-price="5">صوص على البطاطس (5 ج.م)</button>
+                        <button class="add-extra-btn" data-name="سويت كورن" data-price="5">سويت كورن (5 ج.م)</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -201,6 +254,7 @@
             <h2 class="text-3xl font-bold mb-8 border-r-4 border-red-500 pr-4 italic">ساندوتشات "Must Try" المميزة</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="menu-card p-5 rounded-2xl">
+                    <img src="توربينو بيف.jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="text-xl font-bold">تربينو بيف</h3>
                         <div class="text-left">
@@ -211,8 +265,13 @@
                     <p class="text-gray-400 text-sm">قطعة برجر محشي جبنة + قطع بيف بيكون مقطعة + بصل مكرمل + صوص دراجون + صوص بيج تيستي + خس + خيار مخلل + بصل + بطاطس متبلة</p>
                     <button class="add-to-cart-btn bg-red-600 text-white px-4 py-2 rounded mt-2" data-name="تربينو بيف (سنجل)" data-price="115">أضف إلى السلة</button>
                     <button class="double-btn bg-red-600 text-white px-4 py-2 rounded mt-2" data-name="تربينو بيف (دابل)" data-price="155">أضف دابل</button>
+                    <div class="flex gap-2 mt-2">
+                        <button class="add-extra-btn" data-name="صوص على البطاطس" data-price="5">صوص على البطاطس (5 ج.م)</button>
+                        <button class="add-extra-btn" data-name="سويت كورن" data-price="5">سويت كورن (5 ج.م)</button>
+                    </div>
                 </div>
                 <div class="menu-card p-5 rounded-2xl">
+                    <img src="ميكسيكانو اتشيكن .jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="text-xl font-bold">مكسيكانو تشيكن</h3>
                         <div class="text-left">
@@ -223,6 +282,38 @@
                     <p class="text-gray-400 text-sm">قطعة فرايد تشيكن + شرائح دوريتوس + سويت تشيلي + صوص دراجون + صوص شيدر + قطع فلفل ألوان مشوحة على الجريل + بطاطس متبلة</p>
                     <button class="add-to-cart-btn bg-red-600 text-white px-4 py-2 rounded mt-2" data-name="مكسيكانو تشيكن (سنجل)" data-price="115">أضف إلى السلة</button>
                     <button class="double-btn bg-red-600 text-white px-4 py-2 rounded mt-2" data-name="مكسيكانو تشيكن (دابل)" data-price="155">أضف دابل</button>
+                    <div class="flex gap-2 mt-2">
+                        <button class="add-extra-btn" data-name="صوص على البطاطس" data-price="5">صوص على البطاطس (5 ج.م)</button>
+                        <button class="add-extra-btn" data-name="سويت كورن" data-price="5">سويت كورن (5 ج.م)</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="children" class="mb-16 menu-section">
+            <h2 class="text-3xl font-bold mb-8 border-r-4 border-pink-500 pr-4 italic">وجبات الأطفال</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="menu-card p-5 rounded-2xl">
+                    <img src="جونيور بيف.jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
+                    <h3 class="text-xl font-bold">جونيور بيف</h3>
+                    <p class="price-tag mt-2 text-red-400">85 <small>ج.م</small></p>
+                    <p class="text-gray-400 text-sm">ساندوتش بيف مع عصير وبطاطس متبلة</p>
+                    <button class="add-to-cart-btn" data-name="جونيور بيف" data-price="85">أضف إلى السلة</button>
+                    <div class="flex gap-2 mt-2">
+                        <button class="add-extra-btn" data-name="صوص على البطاطس" data-price="5">صوص على البطاطس (5 ج.م)</button>
+                        <button class="add-extra-btn" data-name="سويت كورن" data-price="5">سويت كورن (5 ج.م)</button>
+                    </div>
+                </div>
+                <div class="menu-card p-5 rounded-2xl">
+                    <img src="جونيور اتشكن.jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
+                    <h3 class="text-xl font-bold">جونيور تشيكن</h3>
+                    <p class="price-tag mt-2 text-red-400">85 <small>ج.م</small></p>
+                    <p class="text-gray-400 text-sm">ساندوتش تشيكن مع عصير وبطاطس متبلة</p>
+                    <button class="add-to-cart-btn" data-name="جونيور تشيكن" data-price="85">أضف إلى السلة</button>
+                    <div class="flex gap-2 mt-2">
+                        <button class="add-extra-btn" data-name="صوص على البطاطس" data-price="5">صوص على البطاطس (5 ج.م)</button>
+                        <button class="add-extra-btn" data-name="سويت كورن" data-price="5">سويت كورن (5 ج.م)</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -231,58 +322,53 @@
             <h2 class="text-3xl font-bold mb-8 border-r-4 border-yellow-500 pr-4 italic">المقبلات والمشروبات</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="menu-card p-5 rounded-2xl">
+                    <img src="باكيت فريز.jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <h3 class="text-xl font-bold">باكيت فرايز</h3>
-                    <p class="price-tag mt-2">40 <small>ج.م</small></p>
+                    <p class="price-tag mt-2 text-red-400">40 <small>ج.م</small></p>
                     <p class="text-gray-400 text-sm">بطاطس متبلة</p>
-                    <button class="add-to-cart-btn bg-yellow-600 text-white px-4 py-2 rounded mt-2" data-name="باكيت فرايز" data-price="40">أضف إلى السلة</button>
+                    <button class="add-to-cart-btn" data-name="باكيت فرايز" data-price="40">أضف إلى السلة</button>
                 </div>
                 <div class="menu-card p-5 rounded-2xl">
+                    <img src="تشيز فريز .jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <h3 class="text-xl font-bold">تشيز فرايز</h3>
-                    <p class="price-tag mt-2">45 <small>ج.م</small></p>
+                    <p class="price-tag mt-2 text-red-400">45 <small>ج.م</small></p>
                     <p class="text-gray-400 text-sm">بطاطس متبلة + صوص شيدر</p>
-                    <button class="add-to-cart-btn bg-yellow-600 text-white px-4 py-2 rounded mt-2" data-name="تشيز فرايز" data-price="45">أضف إلى السلة</button>
+                    <button class="add-to-cart-btn" data-name="تشيز فرايز" data-price="45">أضف إلى السلة</button>
                 </div>
                 <div class="menu-card p-5 rounded-2xl">
-                    <h3 class="text-xl font-bold">مهيل فرايز (سبايسي)</h3>
-                    <p class="price-tag mt-2">50 <small>ج.م</small></p>
+                    <img src="هيل فرايز.jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
+                    <h3 class="text-xl font-bold">هيل فرايز (سبايسي)</h3>
+                    <p class="price-tag mt-2 text-red-400">50 <small>ج.م</small></p>
                     <p class="text-gray-400 text-sm">بطاطس متبلة حارة</p>
-                    <button class="add-to-cart-btn bg-yellow-600 text-white px-4 py-2 rounded mt-2" data-name="مهيل فرايز (سبايسي)" data-price="50">أضف إلى السلة</button>
+                    <button class="add-to-cart-btn" data-name="هيل فرايز (سبايسي)" data-price="50">أضف إلى السلة</button>
                 </div>
                 <div class="menu-card p-5 rounded-2xl">
+                     <img src="اسموك بيكون.jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <h3 class="text-xl font-bold">سموك بيكون فرايز</h3>
-                    <p class="price-tag mt-2">55 <small>ج.م</small></p>
+                    <p class="price-tag mt-2 text-red-400">55 <small>ج.م</small></p>
                     <p class="text-gray-400 text-sm">بطاطس متبلة + بيكون مدخن</p>
-                    <button class="add-to-cart-btn bg-yellow-600 text-white px-4 py-2 rounded mt-2" data-name="سموك بيكون فرايز" data-price="55">أضف إلى السلة</button>
+                    <button class="add-to-cart-btn" data-name="سموك بيكون فرايز" data-price="55">أضف إلى السلة</button>
                 </div>
                 <div class="menu-card p-5 rounded-2xl">
+                     <img src="ماية .jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <h3 class="text-xl font-bold">مياه معدنية (صغيرة)</h3>
-                    <p class="price-tag mt-2">7 <small>ج.م</small></p>
+                    <p class="price-tag mt-2 text-red-400">7 <small>ج.م</small></p>
                     <p class="text-gray-400 text-sm">مياه معدنية صغيرة</p>
-                    <button class="add-to-cart-btn bg-yellow-600 text-white px-4 py-2 rounded mt-2" data-name="مياه معدنية (صغيرة)" data-price="7">أضف إلى السلة</button>
+                    <button class="add-to-cart-btn" data-name="مياه معدنية (صغيرة)" data-price="7">أضف إلى السلة</button>
                 </div>
                 <div class="menu-card p-5 rounded-2xl">
+                     <img src="ماية .jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <h3 class="text-xl font-bold">مياه معدنية (كبيرة)</h3>
-                    <p class="price-tag mt-2">10 <small>ج.م</small></p>
+                    <p class="price-tag mt-2 text-red-400">10 <small>ج.م</small></p>
                     <p class="text-gray-400 text-sm">مياه معدنية كبيرة</p>
-                    <button class="add-to-cart-btn bg-yellow-600 text-white px-4 py-2 rounded mt-2" data-name="مياه معدنية (كبيرة)" data-price="10">أضف إلى السلة</button>
+                    <button class="add-to-cart-btn" data-name="مياه معدنية (كبيرة)" data-price="10">أضف إلى السلة</button>
                 </div>
                 <div class="menu-card p-5 rounded-2xl">
+                    <img src="في كولا.jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <h3 class="text-xl font-bold">V Cola</h3>
-                    <p class="price-tag mt-2">20 <small>ج.م</small></p>
+                    <p class="price-tag mt-2 text-red-400">20 <small>ج.م</small></p>
                     <p class="text-gray-400 text-sm">مشروب غازي</p>
-                    <button class="add-to-cart-btn bg-yellow-600 text-white px-4 py-2 rounded mt-2" data-name="V Cola" data-price="20">أضف إلى السلة</button>
-                </div>
-                <div class="menu-card p-5 rounded-2xl">
-                    <h3 class="text-xl font-bold">جونيور بيف</h3>
-                    <p class="price-tag mt-2">85 <small>ج.م</small></p>
-                    <p class="text-gray-400 text-sm">ساندوتش بيف مع عصير وبطاطس متبلة</p>
-                    <button class="add-to-cart-btn bg-yellow-600 text-white px-4 py-2 rounded mt-2" data-name="جونيور بيف" data-price="85">أضف إلى السلة</button>
-                </div>
-                <div class="menu-card p-5 rounded-2xl">
-                    <h3 class="text-xl font-bold">جونيور تشيكن</h3>
-                    <p class="price-tag mt-2">85 <small>ج.م</small></p>
-                    <p class="text-gray-400 text-sm">ساندوتش تشيكن مع عصير وبطاطس متبلة</p>
-                    <button class="add-to-cart-btn bg-yellow-600 text-white px-4 py-2 rounded mt-2" data-name="جونيور تشيكن" data-price="85">أضف إلى السلة</button>
+                    <button class="add-to-cart-btn" data-name="V Cola" data-price="20">أضف إلى السلة</button>
                 </div>
             </div>
         </section>
@@ -291,70 +377,67 @@
             <h2 class="text-3xl font-bold mb-8 border-r-4 border-purple-500 pr-4 italic">مشروبات و إضافات</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="menu-card p-5 rounded-2xl">
-                    <h3 class="text-xl font-bold">مياه صغيرة</h3>
-                    <p class="price-tag mt-2 text-purple-400">6.99 <small>ج.م</small></p>
-                    <p class="text-gray-400 text-sm">مياه معدنية صغيرة</p>
-                    <button class="add-to-cart-btn bg-purple-600 text-white px-4 py-2 rounded mt-2" data-name="مياه صغيرة" data-price="6.99">أضف إلى السلة</button>
-                </div>
-                <div class="menu-card p-5 rounded-2xl">
-                    <h3 class="text-xl font-bold">مياه كبيرة</h3>
-                    <p class="price-tag mt-2 text-purple-400">9.99 <small>ج.م</small></p>
-                    <p class="text-gray-400 text-sm">مياه معدنية كبيرة</p>
-                    <button class="add-to-cart-btn bg-purple-600 text-white px-4 py-2 rounded mt-2" data-name="مياه كبيرة" data-price="9.99">أضف إلى السلة</button>
-                </div>
-                <div class="menu-card p-5 rounded-2xl">
+                    <img src="تركي مدخن.jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <h3 class="text-xl font-bold">تركي مدخن</h3>
-                    <p class="price-tag mt-2 text-purple-400">14.99 <small>ج.م</small></p>
+                    <p class="price-tag mt-2 text-red-400">14.99 <small>ج.م</small></p>
                     <p class="text-gray-400 text-sm">إضافة تركي مدخن</p>
-                    <button class="add-to-cart-btn bg-purple-600 text-white px-4 py-2 rounded mt-2" data-name="تركي مدخن" data-price="14.99">أضف إلى السلة</button>
+                    <button class="add-to-cart-btn bg-red-600 text-white px-4 py-2 rounded mt-2" data-name="تركي مدخن" data-price="14.99">أضف إلى السلة</button>
                 </div>
                 <div class="menu-card p-5 rounded-2xl">
+                    <img src="موتزريلا استيكس.jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <h3 class="text-xl font-bold">2 قطعة موتزاريلا أستكس</h3>
-                    <p class="price-tag mt-2 text-purple-400">19.99 <small>ج.م</small></p>
+                    <p class="price-tag mt-2 text-red-400">19.99 <small>ج.م</small></p>
                     <p class="text-gray-400 text-sm">إضافة 2 قطعة موتزاريلا أستكس</p>
-                    <button class="add-to-cart-btn bg-purple-600 text-white px-4 py-2 rounded mt-2" data-name="2 قطعة موتزاريلا أستكس" data-price="19.99">أضف إلى السلة</button>
+                    <button class="add-to-cart-btn bg-red-600 text-white px-4 py-2 rounded mt-2" data-name="2 قطعة موتزاريلا أستكس" data-price="19.99">أضف إلى السلة</button>
                 </div>
                 <div class="menu-card p-5 rounded-2xl">
+                    <img src="روز بيف.jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <h3 class="text-xl font-bold">روز بيف</h3>
-                    <p class="price-tag mt-2 text-purple-400">14.99 <small>ج.م</small></p>
+                    <p class="price-tag mt-2 text-red-400">14.99 <small>ج.م</small></p>
                     <p class="text-gray-400 text-sm">إضافة روز بيف</p>
-                    <button class="add-to-cart-btn bg-purple-600 text-white px-4 py-2 rounded mt-2" data-name="روز بيف" data-price="14.99">أضف إلى السلة</button>
+                    <button class="add-to-cart-btn bg-red-600 text-white px-4 py-2 rounded mt-2" data-name="روز بيف" data-price="14.99">أضف إلى السلة</button>
                 </div>
                 <div class="menu-card p-5 rounded-2xl">
+                    <img src="حلقات بصل.jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <h3 class="text-xl font-bold">حلقات بصل</h3>
-                    <p class="price-tag mt-2 text-purple-400">14.99 <small>ج.م</small></p>
+                    <p class="price-tag mt-2 text-red-400">14.99 <small>ج.م</small></p>
                     <p class="text-gray-400 text-sm">إضافة حلقات بصل</p>
-                    <button class="add-to-cart-btn bg-purple-600 text-white px-4 py-2 rounded mt-2" data-name="حلقات بصل" data-price="14.99">أضف إلى السلة</button>
+                    <button class="add-to-cart-btn bg-red-600 text-white px-4 py-2 rounded mt-2" data-name="حلقات بصل" data-price="14.99">أضف إلى السلة</button>
                 </div>
                 <div class="menu-card p-5 rounded-2xl">
+                    <img src="اضافة صوص.jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <h3 class="text-xl font-bold">صوص شيدر</h3>
-                    <p class="price-tag mt-2 text-purple-400">9.99 <small>ج.م</small></p>
+                    <p class="price-tag mt-2 text-red-400">9.99 <small>ج.م</small></p>
                     <p class="text-gray-400 text-sm">إضافة صوص شيدر</p>
-                    <button class="add-to-cart-btn bg-purple-600 text-white px-4 py-2 rounded mt-2" data-name="صوص شيدر" data-price="9.99">أضف إلى السلة</button>
+                    <button class="add-to-cart-btn bg-red-600 text-white px-4 py-2 rounded mt-2" data-name="صوص شيدر" data-price="9.99">أضف إلى السلة</button>
                 </div>
                 <div class="menu-card p-5 rounded-2xl">
+                    <img src="اضافة صوص.jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <h3 class="text-xl font-bold">صوص تكساس</h3>
-                    <p class="price-tag mt-2 text-purple-400">9.99 <small>ج.م</small></p>
+                    <p class="price-tag mt-2 text-red-400">9.99 <small>ج.م</small></p>
                     <p class="text-gray-400 text-sm">إضافة صوص تكساس</p>
-                    <button class="add-to-cart-btn bg-purple-600 text-white px-4 py-2 rounded mt-2" data-name="صوص تكساس" data-price="9.99">أضف إلى السلة</button>
+                    <button class="add-to-cart-btn bg-red-600 text-white px-4 py-2 rounded mt-2" data-name="صوص تكساس" data-price="9.99">أضف إلى السلة</button>
                 </div>
                 <div class="menu-card p-5 rounded-2xl">
+                    <img src="بيف بيكون.jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <h3 class="text-xl font-bold">بيف بيكون</h3>
-                    <p class="price-tag mt-2 text-purple-400">15 <small>ج.م</small></p>
+                    <p class="price-tag mt-2 text-red-400">15 <small>ج.م</small></p>
                     <p class="text-gray-400 text-sm">إضافة بيف بيكون</p>
-                    <button class="add-to-cart-btn bg-purple-600 text-white px-4 py-2 rounded mt-2" data-name="بيف بيكون" data-price="15">أضف إلى السلة</button>
+                    <button class="add-to-cart-btn bg-red-600 text-white px-4 py-2 rounded mt-2" data-name="بيف بيكون" data-price="15">أضف إلى السلة</button>
                 </div>
                 <div class="menu-card p-5 rounded-2xl">
+                    <img src="مشروم.jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <h3 class="text-xl font-bold">مشروم</h3>
-                    <p class="price-tag mt-2 text-purple-400">15 <small>ج.م</small></p>
+                    <p class="price-tag mt-2 text-red-400">15 <small>ج.م</small></p>
                     <p class="text-gray-400 text-sm">إضافة مشروم</p>
-                    <button class="add-to-cart-btn bg-purple-600 text-white px-4 py-2 rounded mt-2" data-name="مشروم" data-price="15">أضف إلى السلة</button>
+                    <button class="add-to-cart-btn bg-red-600 text-white px-4 py-2 rounded mt-2" data-name="مشروم" data-price="15">أضف إلى السلة</button>
                 </div>
                 <div class="menu-card p-5 rounded-2xl">
+                    <img src="سويت كورن .jpg" alt="صورة الطعام" class="product-img w-full h-40 object-contain rounded-lg mb-4 shadow-lg transition-transform duration-300">
                     <h3 class="text-xl font-bold">سويت كورن</h3>
-                    <p class="price-tag mt-2 text-purple-400">5 <small>ج.م</small></p>
+                    <p class="price-tag mt-2 text-red-400">5 <small>ج.م</small></p>
                     <p class="text-gray-400 text-sm">إضافة سويت كورن</p>
-                    <button class="add-to-cart-btn bg-purple-600 text-white px-4 py-2 rounded mt-2" data-name="سويت كورن" data-price="5">أضف إلى السلة</button>
+                    <button class="add-to-cart-btn bg-red-600 text-white px-4 py-2 rounded mt-2" data-name="سويت كورن" data-price="5">أضف إلى السلة</button>
                 </div>
             </div>
         </section>
@@ -428,75 +511,81 @@
         <div class="border-t border-gray-600 pt-2">
             <p class="text-sm">المجموع: <span id="cart-total">0.00</span> ج.م</p>
             <div class="mb-2">
-                <label class="text-sm">المنطقة:</label>
-                <select id="area-select" class="w-full p-2 mt-1 bg-gray-700 text-white rounded">
-                    <option value="takeaway" data-fee="0">تيك أوي (0 ج.م)</option>
-                    <option value="فلل" data-fee="20">فلل  (20 ج.م)</option>
-                    <option value="زهور الجديده" data-fee="25">زهور الجديده (25 ج.م)</option>
-                    <option value="كوبري الفحص" data-fee="25">كوبري الفحص (25 ج.م)</option>
-                    <option value="اخر كوبري الفحص" data-fee="30">اخر كوبري الفحص (30 ج.م)</option>
-                    <option value="كفر سعد" data-fee="40">كفر سعد (40 ج.م)</option>
-                    <option value="ميت راضي" data-fee="45">ميت راضي (45 ج.م)</option>
-                    <option value="جمجره القديمه" data-fee="50">جمجره القديمه (50 ج.م)</option>
-                    <option value="الاهرام" data-fee="27">الاهرام (27 ج.م)</option>
-                    <option value="اتريب" data-fee="27">اتريب (27 ج.م)</option>
-                    <option value="تجارة" data-fee="27">تجارة (27 ج.م)</option>
-                    <option value="المواقف" data-fee="27">المواقف (27 ج.م)</option>
-                    <option value="كليه فنون +تمريض" data-fee="27">كليه فنون +تمريض (27 ج.م)</option>
-                    <option value="الاستاد" data-fee="27">الاستاد (27 ج.م)</option>
-                    <option value="علوم" data-fee="27">علوم (27 ج.م)</option>
-                    <option value="المنشيه" data-fee="30">المنشيه (30 ج.م)</option>
-                    <option value="عزب السوق" data-fee="35">عزب السوق (35 ج.م)</option>
-                    <option value="عزب المتيني" data-fee="40">عزب المتيني (40 ج.م)</option>
-                    <option value="الشموت" data-fee="60">الشموت (60 ج.م)</option>
-                    <option value="كفر الشموت" data-fee="65">كفر الشموت (65 ج.م)</option>
-                    <option value="الشديه" data-fee="30">الشديه (30 ج.م)</option>
-                    <option value="وسط البلد" data-fee="27">وسط البلد (27 ج.م)</option>
-                    <option value="المحطه" data-fee="30">المحطه (30 ج.م)</option>
-                    <option value="كفر مناقر" data-fee="30">كفر مناقر (30 ج.م)</option>
-                    <option value="عزب الزراعه" data-fee="35">عزب الزراعه (35 ج.م)</option>
-                    <option value="عزب السلام" data-fee="40">عزبة السلام  (40 ج.م)</option>
-                    <option value="الوكالة " data-fee="40">الوكالة   (40 ج.م)</option>
-                    <option value="الرمله" data-fee="40">الرمله (40 ج.م)</option>
-                    <option value="اخر الرمله" data-fee="45">اخر الرمله (45 ج.م)</option>
-                    <option value="ميت العطار" data-fee="55">ميت العطار (55 ج.م)</option>
-                    <option value="بلتان" data-fee="80">بلتان (80 ج.م)</option>
-                    <option value="العمار" data-fee="85">العمار (85 ج.م)</option>
-                    <option value="عزب البرنس" data-fee="35">عزب البرنس (35 ج.م)</option>
-                    <option value="الحرس" data-fee="35">الحرس (35 ج.م)</option>
-                    <option value="اخر الحرس" data-fee="40">اخر الحرس (40 ج.م)</option>
-                    <option value="ميت عاصم" data-fee="50">ميت عاصم (50 ج.م)</option>
-                    <option value="عزبه شراره" data-fee="55">عزبه شراره (55 ج.م)</option>
-                    <option value="سندنهور" data-fee="60">سندنهور (60 ج.م)</option>
-                    <option value="كفر سندنهور" data-fee="65">كفر سندنهور (65 ج.م)</option>
-                    <option value="مساكن طابا" data-fee="40">مساكن طابا (40 ج.م)</option>
-                    <option value="طوخ" data-fee="90">طوخ (90 ج.م)</option>
-                    <option value="كفر الجزار" data-fee="30">كفر الجزار (30 ج.م)</option>
-                    <option value="بطا" data-fee="35">بطا (35 ج.م)</option>
-                    <option value="كفر بطا" data-fee="70">كفر بطا (70 ج.م)</option>
-                    <option value="وروره" data-fee="45">وروره (45 ج.م)</option>
-                    <option value="دملو" data-fee="50">دملو (50 ج.م)</option>
-                    <option value="ميت الحوفين" data-fee="55">ميت الحوفين (55 ج.م)</option>
-                    <option value="ميت برا" data-fee="95">ميت برا (95 ج.م)</option>
-                    <option value="كفر ابو ذكرى" data-fee="55">كفر ابو ذكرى (55 ج.م)</option>
-                    <option value="عرب ابو ذكري" data-fee="60">عرب ابو ذكري (60 ج.م)</option>
-                    <option value="ميت السباع" data-fee="60">ميت السباع (60 ج.م)</option>
-                    <option value="نقباس" data-fee="70">نقباس (70 ج.م)</option>
-                    <option value="كفر عطاالله" data-fee="85">كفر عطاالله (85 ج.م)</option>
-                    <option value="شبلنجا" data-fee="75">شبلنجا (75 ج.م)</option>
-                    <option value="كفر مويس" data-fee="65">كفر مويس (65 ج.م)</option>
-                    <option value="عزب ذكي" data-fee="60">عزب ذكي (60 ج.م)</option>
-                    <option value="عزب الترزي" data-fee="45">عزب الترزي (45 ج.م)</option>
-                    <option value="العمري" data-fee="50">العمري (50 ج.م)</option>
-                    <option value="جمجره الجديده" data-fee="60">جمجره الجديده (60 ج.م)</option>
-                    <option value="كفر شكر" data-fee="95">كفر شكر (95 ج.م)</option>
-                    <option value="اسطنها" data-fee="85">اسطنها (85 ج.م)</option>
-                    <option value="بقيره" data-fee="75">بقيره (75 ج.م)</option>
-                    <option value="عرب الرمل" data-fee="70">عرب الرمل (70 ج.م)</option>
-                    <option value="اجهور الرمل" data-fee="75">اجهور الرمل (75 ج.م)</option>
-                    <option value="قويسنا" data-fee="90">قويسنا (90 ج.م)</option>
-                    <option value="مرصفه" data-fee="95">مرصفه (95 ج.م)</option>
-                </select>
+                <label class="text-sm">نوع الطلب:</label>
+                <div class="flex gap-2 mt-2">
+                    <button id="takeaway-btn" class="flex-1 bg-red-600 text-white px-4 py-2 rounded">تيك أوي (0 ج.م)</button>
+                    <button id="delivery-btn" class="flex-1 bg-blue-600 text-white px-4 py-2 rounded">دليفري</button>
+                </div>
+                <div id="area-selection" class="mt-2 hidden">
+                    <label class="text-sm">المنطقة:</label>
+                    <select id="area-select" class="w-full p-2 mt-1 bg-gray-700 text-white rounded">
+                        <option value="فلل" data-fee="20">فلل  (20 ج.م)</option>
+                        <option value="زهور الجديده" data-fee="25">زهور الجديده (25 ج.م)</option>
+                        <option value="كوبري الفحص" data-fee="25">كوبري الفحص (25 ج.م)</option>
+                        <option value="اخر كوبري الفحص" data-fee="30">اخر كوبري الفحص (30 ج.م)</option>
+                        <option value="كفر سعد" data-fee="40">كفر سعد (40 ج.م)</option>
+                        <option value="ميت راضي" data-fee="45">ميت راضي (45 ج.م)</option>
+                        <option value="جمجره القديمه" data-fee="50">جمجره القديمه (50 ج.م)</option>
+                        <option value="الاهرام" data-fee="27">الاهرام (27 ج.م)</option>
+                        <option value="اتريب" data-fee="27">اتريب (27 ج.م)</option>
+                        <option value="تجارة" data-fee="27">تجارة (27 ج.م)</option>
+                        <option value="المواقف" data-fee="27">المواقف (27 ج.م)</option>
+                        <option value="كليه فنون +تمريض" data-fee="27">كليه فنون +تمريض (27 ج.م)</option>
+                        <option value="الاستاد" data-fee="27">الاستاد (27 ج.م)</option>
+                        <option value="علوم" data-fee="27">علوم (27 ج.م)</option>
+                        <option value="المنشيه" data-fee="30">المنشيه (30 ج.م)</option>
+                        <option value="عزب السوق" data-fee="35">عزب السوق (35 ج.م)</option>
+                        <option value="عزب المتيني" data-fee="40">عزب المتيني (40 ج.م)</option>
+                        <option value="الشموت" data-fee="60">الشموت (60 ج.م)</option>
+                        <option value="كفر الشموت" data-fee="65">كفر الشموت (65 ج.م)</option>
+                        <option value="الشديه" data-fee="30">الشديه (30 ج.م)</option>
+                        <option value="وسط البلد" data-fee="27">وسط البلد (27 ج.م)</option>
+                        <option value="المحطه" data-fee="30">المحطه (30 ج.م)</option>
+                        <option value="كفر مناقر" data-fee="30">كفر مناقر (30 ج.م)</option>
+                        <option value="عزب الزراعه" data-fee="35">عزب الزراعه (35 ج.م)</option>
+                        <option value="عزب السلام" data-fee="40">عزبة السلام  (40 ج.م)</option>
+                        <option value="الوكالة " data-fee="40">الوكالة   (40 ج.م)</option>
+                        <option value="الرمله" data-fee="40">الرمله (40 ج.م)</option>
+                        <option value="اخر الرمله" data-fee="45">اخر الرمله (45 ج.م)</option>
+                        <option value="ميت العطار" data-fee="55">ميت العطار (55 ج.م)</option>
+                        <option value="بلتان" data-fee="80">بلتان (80 ج.م)</option>
+                        <option value="العمار" data-fee="85">العمار (85 ج.م)</option>
+                        <option value="عزب البرنس" data-fee="35">عزب البرنس (35 ج.م)</option>
+                        <option value="الحرس" data-fee="35">الحرس (35 ج.م)</option>
+                        <option value="اخر الحرس" data-fee="40">اخر الحرس (40 ج.م)</option>
+                        <option value="ميت عاصم" data-fee="50">ميت عاصم (50 ج.م)</option>
+                        <option value="عزبه شراره" data-fee="55">عزبه شراره (55 ج.م)</option>
+                        <option value="سندنهور" data-fee="60">سندنهور (60 ج.م)</option>
+                        <option value="كفر سندنهور" data-fee="65">كفر سندنهور (65 ج.م)</option>
+                        <option value="مساكن طابا" data-fee="40">مساكن طابا (40 ج.م)</option>
+                        <option value="طوخ" data-fee="90">طوخ (90 ج.م)</option>
+                        <option value="كفر الجزار" data-fee="30">كفر الجزار (30 ج.م)</option>
+                        <option value="بطا" data-fee="35">بطا (35 ج.م)</option>
+                        <option value="كفر بطا" data-fee="70">كفر بطا (70 ج.م)</option>
+                        <option value="وروره" data-fee="45">وروره (45 ج.م)</option>
+                        <option value="دملو" data-fee="50">دملو (50 ج.م)</option>
+                        <option value="ميت الحوفين" data-fee="55">ميت الحوفين (55 ج.م)</option>
+                        <option value="ميت برا" data-fee="95">ميت برا (95 ج.م)</option>
+                        <option value="كفر ابو ذكرى" data-fee="55">كفر ابو ذكرى (55 ج.م)</option>
+                        <option value="عرب ابو ذكري" data-fee="60">عرب ابو ذكري (60 ج.م)</option>
+                        <option value="ميت السباع" data-fee="60">ميت السباع (60 ج.م)</option>
+                        <option value="نقباس" data-fee="70">نقباس (70 ج.م)</option>
+                        <option value="كفر عطاالله" data-fee="85">كفر عطاالله (85 ج.م)</option>
+                        <option value="شبلنجا" data-fee="75">شبلنجا (75 ج.م)</option>
+                        <option value="كفر مويس" data-fee="65">كفر مويس (65 ج.م)</option>
+                        <option value="عزب ذكي" data-fee="60">عزب ذكي (60 ج.م)</option>
+                        <option value="عزب الترزي" data-fee="45">عزب الترزي (45 ج.م)</option>
+                        <option value="العمري" data-fee="50">العمري (50 ج.م)</option>
+                        <option value="جمجره الجديده" data-fee="60">جمجره الجديده (60 ج.م)</option>
+                        <option value="كفر شكر" data-fee="95">كفر شكر (95 ج.م)</option>
+                        <option value="اسطنها" data-fee="85">اسطنها (85 ج.م)</option>
+                        <option value="بقيره" data-fee="75">بقيره (75 ج.م)</option>
+                        <option value="عرب الرمل" data-fee="70">عرب الرمل (70 ج.م)</option>
+                        <option value="اجهور الرمل" data-fee="75">اجهور الرمل (75 ج.م)</option>
+                        <option value="قويسنا" data-fee="90">قويسنا (90 ج.م)</option>
+                        <option value="مرصفه" data-fee="95">مرصفه (95 ج.م)</option>
+                    </select>
+                </div>
             </div>
             <button id="checkout-btn" class="bg-orange-600 text-white px-4 py-2 rounded mt-2 w-full">اطلب الآن</button>
         </div>
