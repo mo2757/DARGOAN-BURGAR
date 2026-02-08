@@ -459,3 +459,42 @@ document.querySelectorAll('.category-link').forEach(link => {
         targetSection.scrollIntoView({ behavior: 'smooth' });
     });
 });
+function checkRestaurantStatus() {
+    const now = new Date();
+    const hour = now.getHours();
+    const statusBar = document.getElementById('status-bar');
+    const statusText = document.getElementById('status-text');
+    const orderButtons = document.querySelectorAll('.add-to-cart-btn'); // تأكد إن ده كلاس أزرار الشراء عندك
+
+    // منطق مواعيد العمل: من 11 صباحاً (11) حتى 3 فجراً (أقل من 3)
+    const isOpen = (hour >= 11 || hour < 3);
+
+    if (isOpen) {
+        // حالة المطعم مفتوح
+        statusBar.className = "bg-green-600 text-white text-center p-2";
+        statusText.innerText = "🟢 نحن نستقبل طلباتكم الآن (مفتوح حتى 3 فجراً)";
+    } else {
+        // حالة المطعم مغلق
+        statusBar.className = "bg-red-700 text-white text-center p-2";
+        statusText.innerText = "🔴 نعتذر، المطعم مغلق الآن (نعود للعمل الساعة 11 صباحاً)";
+        
+        // تعطيل الأزرار وشكلها
+        orderButtons.forEach(btn => {
+            btn.style.backgroundColor = "#555";
+            btn.style.cursor = "not-allowed";
+            btn.innerText = "مغلق حالياً";
+        });
+    }
+
+    // منع تنفيذ الأوردر عند الضغط
+    document.addEventListener('click', function(e) {
+        if (!isOpen && (e.target.classList.contains('add-to-cart-btn') || e.target.closest('.add-to-cart-btn'))) {
+            e.preventDefault();
+            e.stopPropagation();
+            alert("عذراً، المطعم مغلق حالياً. يمكنك الطلب خلال مواعيد العمل من 11 ص إلى 3 فجر.");
+        }
+    }, true);
+}
+
+// تشغيل الفحص عند تحميل الصفحة
+window.onload = checkRestaurantStatus;
