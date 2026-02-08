@@ -471,3 +471,17 @@ body { font-family: 'Cairo', sans-serif; background-color: #0f0f0f; color: #fff;
     background-color: #fcfcfc; /* خلفية رمادي فاتح جداً لملء الفراغات */
     padding: 5px; /* مسافة بسيطة عشان الصورة متلمسش الحواف */
 }
+.add-to-cart-btn {
+    transition: all 0.3s ease;
+}
+
+/* حالة الـ Hover فقط لو المطعم مفتوح */
+.add-to-cart-btn:not([style*="not-allowed"]):hover {
+    transform: scale(1.05);
+    background-color: #ff0000; /* لون برجر دراجون الأحمر */
+}
+
+/* تأثير اللمس للموبايل */
+.add-to-cart-btn:active {
+    transform: scale(0.95);
+}
