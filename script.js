@@ -459,37 +459,39 @@ document.querySelectorAll('.category-link').forEach(link => {
         targetSection.scrollIntoView({ behavior: 'smooth' });
     });
 });
-function disableAllOrdering() {
+function updateRestaurantStatus() {
     const now = new Date();
     const hour = now.getHours();
-
-    // مواعيد العمل من 11 صباحاً حتى 3 فجراً
+    
+    // المواعيد: من 11 صباحاً حتى 3 فجراً
     const isOpen = (hour >= 11 || hour < 3);
+    
+    // ابحث عن العنصر الذي يعرض الحالة (تأكد أن له id="status-text" أو استخدم الكلاس)
+    const statusElement = document.getElementById('status-text') || document.querySelector('.status-bar span');
+    
+    if (statusElement) {
+        if (isOpen) {
+            statusElement.innerText = "🟢 المطعم مفتوح الآن - نتشرف بزيارتكم";
+            statusElement.parentElement.style.backgroundColor = "#16a34a"; // أخضر هادئ
+        } else {
+            statusElement.innerText = "🔴 المطعم مغلق الآن - نعود للعمل الساعة 11 صباحاً";
+            statusElement.parentElement.style.backgroundColor = "#991b1b"; // أحمر داكن
+        }
+    }
 
+    // قفل جميع أزرار الإضافة (الرئيسي، الدبل، الإضافات) إذا كان مغلقاً
     if (!isOpen) {
-        // 1. تحديد كل الأزرار التي تحتوي على نصوص "أضف" أو لها علاقة بالسلة
-        const allButtons = document.querySelectorAll('button, .btn, a'); // يبحث في كل العناصر القابلة للضغط
-
-        allButtons.forEach(btn => {
-            const btnText = btn.innerText.trim();
-            
-            // إذا كان الزر يحتوي على كلمة "أضف" (مثل أضف للسلة، أضف دبل)
-            if (btnText.includes("أضف") || btnText.includes("سلة")) {
-                // تغيير الشكل
-                btn.style.backgroundColor = "#444"; // لون رمادي غامق
-                btn.style.color = "#888"; // لون خط باهت
-                btn.style.cursor = "not-allowed";
+        const allAddButtons = document.querySelectorAll('button, .btn');
+        allAddButtons.forEach(btn => {
+            if (btn.innerText.includes("أضف") || btn.innerText.includes("سلة")) {
                 btn.innerText = "مغلق حالياً";
-                
-                // منع الضغط برمجياً
-                btn.disabled = true; 
-                btn.style.pointerEvents = "none"; // يمنع الماوس واللمس نهائياً
+                btn.style.pointerEvents = "none";
+                btn.style.opacity = "0.5";
+                btn.style.filter = "grayscale(1)";
             }
         });
-
-        console.log("تم إيقاف جميع أزرار الطلب لأن المطعم مغلق.");
     }
 }
 
-// تشغيل الفحص عند تحميل الصفحة
-window.addEventListener('DOMContentLoaded', disableAllOrdering);
+// تنفيذ الفحص فور تحميل الصفحة
+window.addEventListener('DOMContentLoaded', updateRestaurantStatus);
