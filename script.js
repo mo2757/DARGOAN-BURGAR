@@ -232,7 +232,7 @@ checkoutBtn.addEventListener('click', () => {
 
     // Encode message and open WhatsApp
     const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/201121334575?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/201207856328?text=${encodedMessage}`, '_blank');
 
     // Save order to history
     const order = {
@@ -404,7 +404,7 @@ document.getElementById('send-complaint').addEventListener('click', () => {
     const complaintText = document.getElementById('complaint-text').value;
     if (complaintText.trim()) {
         const message = encodeURIComponent(`شكوى: ${complaintText}`);
-        window.open(`https://wa.me/201121334575?text=${message}`, '_blank');
+        window.open(`https://wa.me/201119830763?text=${message}`, '_blank');
         complaintModal.classList.add('hidden');
         document.getElementById('complaint-text').value = '';
     } else {
